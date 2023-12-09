@@ -34,7 +34,7 @@ class TestRol(unittest.TestCase):
         self.assertEqual(rol.Name, 'name')
         self.assertEqual(rol.NormalizedName, 'NormalizedName')
         self.assertEqual(rol.ConcurrencyStamp, '9d2c6cbe-f6e9-42d2-b7ae-d4a8f65c4d96')
-
+        #coment for merge
 
 if __name__ == '__main__':
     unittest.main()
