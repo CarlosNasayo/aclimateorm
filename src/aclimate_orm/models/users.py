@@ -1,7 +1,7 @@
 from mongoengine import Document, StringField, IntField, BooleanField, ListField
 import uuid
 
-class User(Document):
+class Users(Document):
     """
     Represents the Users in the database.
 
@@ -57,7 +57,9 @@ class User(Document):
     delete()
         Deletes the User object from the database.
     """
-class Users(Document):
+    meta = {
+        'collection': 'Users'
+    }
     _id = StringField(primary_key=True, default=str(uuid.uuid4()))
     UserName = StringField(required=True)
     NormalizedUserName = StringField()
@@ -80,6 +82,4 @@ class Users(Document):
     Tokens = ListField()
     RecoveryCodes = ListField()
 
-    meta = {
-        'collection': 'Users'
-    }
+
