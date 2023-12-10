@@ -1,7 +1,7 @@
 from mongoengine import Document, StringField
 import uuid
 
-class User(Document):
+class Roles(Document):
     """
     Represents the Users in the database.
 
@@ -23,12 +23,12 @@ class User(Document):
     delete()
         Deletes the Rol object from the database.
     """
-class Roles(Document):
+    meta = {
+        'collection': 'Roles'
+    }
     _id = StringField(primary_key=True, default=str(uuid.uuid4()))
     Name = StringField(required=True)
     NormalizedName = StringField()
     ConcurrencyStamp = StringField(required=True)
     
-    meta = {
-        'collection': 'Roles'
-    }
+
